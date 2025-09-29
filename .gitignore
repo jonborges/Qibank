@@ -16,6 +16,7 @@ lerna-debug.log*
 /frontend/dist-ssr
 /frontend/.env
 /frontend/.env.*
+backend/demo/src/main/resources/application-local.properties
 
 # Java/Maven - Backend
 backend/target/
