@@ -15,7 +15,13 @@ Bem-vindo ao QiBank! Um projeto de aplicação bancária full-stack desenvolvido
 
 ---
 
-![Captura de Tela da Aplicação](./screenshot.png)
+![Captura de Tela da Aplicação](https://imgur.com/Ilwe9aR)
+https://imgur.com/fQn1RAY
+https://imgur.com/fQn1RAY
+https://imgur.com/XbxOBbc
+https://imgur.com/ZLylJpk
+
+
 *(Sugestão: Substitua este texto e o arquivo `screenshot.png` por uma captura de tela real da sua aplicação!)*
 
 ## 🚀 Funcionalidades
@@ -151,7 +157,7 @@ cd qibank
 Projeto desenvolvido por **Jonathan Borges**.
 
 *   **GitHub:** @jonborges
-*   **LinkedIn:** Seu LinkedIn
+*   **LinkedIn:** [Seu LinkedIn](https://www.linkedin.com/in/jonathan-borges-andrade/)
 
 ---
 
