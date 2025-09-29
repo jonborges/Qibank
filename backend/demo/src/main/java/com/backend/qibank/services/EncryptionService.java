@@ -26,7 +26,7 @@ public class EncryptionService {
     private String key;
     private SecretKeySpec secretKey;
     
-    @Value("${encryption.hmac-key}") 
+    @Value("${encryption.hmac.key}") 
     private String hmacKey;
     private SecretKeySpec hmacSecretKey;
 
