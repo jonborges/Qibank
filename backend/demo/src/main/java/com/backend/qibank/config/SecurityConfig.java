@@ -50,7 +50,8 @@ public class SecurityConfig {
         // Permite requisições do frontend local e do frontend em produção na Vercel
         configuration.setAllowedOrigins(Arrays.asList(
                 "http://localhost:5173",
-                "https://qibank.vercel.app" // URL que a Vercel provavelmente te dará
+                "https://qibank.vercel.app", // URL de produção
+                "https://qibank-6iia7hgjh-jonathans-projects-d5ceeace.vercel.app" // URL de preview da Vercel
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Métodos permitidos
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type")); // Cabeçalhos permitidos
