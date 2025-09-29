@@ -1,7 +1,7 @@
 # --- 1. Build Stage ---
-# Usamos uma imagem do Maven com Java 17 para compilar o projeto.
+# Usamos uma imagem do Maven com Java 21 para compilar o projeto.
 # "AS build" dá um nome a este estágio.
-FROM maven:3.8.5-openjdk-17 AS build
+FROM maven:3.9.6-amazoncorretto-21 AS build
 
 # Define o diretório de trabalho dentro do contêiner.
 WORKDIR /app
@@ -19,7 +19,7 @@ RUN mvn package -DskipTests
 
 # --- 2. Run Stage ---
 # Usamos uma imagem leve, apenas com o Java necessário para rodar (JRE).
-FROM eclipse-temurin:17-jre-slim
+FROM amazoncorretto:21-jre-slim
 
 # Copia o .jar gerado no estágio de build para o contêiner final.
 COPY --from=build /app/target/*.jar app.jar
