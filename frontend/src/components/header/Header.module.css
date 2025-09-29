@@ -64,47 +64,109 @@
 }
 
 
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  
-  .links {
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .logo {
-    width: 10rem;
-  }
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;          
-    padding: 0.5rem 1rem;  
-  }
+    flex-direction: row;
   
-  .logo {
-    width: 6rem;           
+    justify-content: space-between;
     height: auto;
-    margin-bottom: 0.5rem; 
+    padding: 1rem;
+    position: relative; 
+  }
+
+  .logo {
+    width: 7rem;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .menuToggle {
+    display: block; 
+    margin-top: 0; 
   }
 
   .links {
-    flex-wrap: wrap;        
-    justify-content: center;
-    gap: 0.8rem;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1a3d7c; 
+    padding: 0; 
+    gap: 1rem;
+    margin-top: 0; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .linksOpen {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+
+ 
+  .navOpen .hamburger {
+    background-color: transparent; 
+  }
+
+  .navOpen .hamburger::before {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .navOpen .hamburger::after {
+    transform: translateY(0) rotate(-45deg);
   }
 
   .links a,
   .logoutButton {
-    font-size: 0.95rem;     
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    width: 90%; 
+    margin: 0 auto;
+    border-bottom: 1px solid #102a54; 
+  }
+
+  .links a:last-of-type,
+  .links > .logoutButton {
+    border-bottom: none;
   }
 }
