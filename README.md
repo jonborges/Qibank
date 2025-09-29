@@ -159,7 +159,7 @@ cd qibank
 Projeto desenvolvido por **Jonathan Borges**.
 
 *   **GitHub:** @jonborges
-*   **LinkedIn:** [Seu LinkedIn](https://www.linkedin.com/in/jonathan-borges-andrade/)
+*   **LinkedIn:** [JonBorges](https://www.linkedin.com/in/jonathan-borges-andrade/)
 
 ---
 
