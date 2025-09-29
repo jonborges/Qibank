@@ -30,15 +30,20 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .cors(Customizer.withDefaults()) // Habilita a configuração de CORS definida no bean abaixo
-                .csrf(AbstractHttpConfigurer::disable) // Forma correta de desabilitar o CSRF
+                .cors(Customizer.withDefaults()) 
+                .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // API não guarda estado/sessão
                 .authorizeHttpRequests(authorize -> authorize
-                        // Libera o endpoint de cadastro de clientes
+
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Permitir todas as requisições preflight (OPTIONS)
+                        // Endpoints públicos (criação de conta e login)
                         .requestMatchers(HttpMethod.POST, "/api/clientes").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
-                        .requestMatchers("/api/clientes/**").permitAll() // Permite todas as operações para /api/clientes/*
-                        // Bloqueia todo o resto por padrão, exigindo autenticação
+                        // Endpoints que precisam de autenticação (exemplo: buscar dados do usuário)
+                        // O ideal é que operações de alteração e exclusão sejam autenticadas,
+                        // mas vamos manter como permitAll() por enquanto para garantir que funcione
+                        // e depois podemos refinar a segurança.
+                        .requestMatchers("/api/clientes/**").permitAll() 
                         .anyRequest().authenticated()
                 )
                 .build();
@@ -47,17 +52,17 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Permite requisições do frontend local, da URL de produção e de qualquer URL de preview da Vercel
+
         configuration.setAllowedOriginPatterns(Arrays.asList(
                 "http://localhost:5173",
                 "https://qibank.vercel.app",
                 "https://*-jonathans-projects-d5ceeace.vercel.app"
         ));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Métodos permitidos
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type")); // Cabeçalhos permitidos
-        configuration.setAllowCredentials(true); // Permite envio de credenciais (cookies, tokens)
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); 
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type")); 
+        configuration.setAllowCredentials(true); 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration); // Aplica a configuração para todos os endpoints
+        source.registerCorsConfiguration("/**", configuration); 
         return source;
     }
 }
