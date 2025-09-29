@@ -25,10 +25,7 @@ Bem-vindo ao QiBank! Um projeto de aplicação bancária full-stack desenvolvido
 
 ## Comparador
 ![Comparador](https://i.imgur.com/Ilwe9aR.png)
-<<<<<<< HEAD
 
-=======
->>>>>>> 48fc980875aa34a91f72bd1e5a3f6e22b1746d51
 
 ## 🚀 Funcionalidades
 
