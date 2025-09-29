@@ -14,13 +14,17 @@ Bem-vindo ao QiBank! Um projeto de aplicação bancária full-stack desenvolvido
 *(Nota: O backend pode levar cerca de 30 segundos para "acordar" no primeiro acesso devido ao plano gratuito da hospedagem.)*
 
 ---
+## Home
+![Home](https://i.imgur.com/ZLylJpk.png)
 
+## Guia de Investimentos
+![Guia de Investimentos](https://i.imgur.com/XbxOBbc.png)
 
+## Dashboard
+![Dashboard](https://i.imgur.com/fQn1RAY.png)
 
-
-
-
-
+## Comparador
+![Comparador](https://i.imgur.com/Ilwe9aR.png)
 
 
 ## 🚀 Funcionalidades
@@ -156,7 +160,7 @@ cd qibank
 Projeto desenvolvido por **Jonathan Borges**.
 
 *   **GitHub:** @jonborges
-*   **LinkedIn:** [Seu LinkedIn](https://www.linkedin.com/in/jonathan-borges-andrade/)
+*   **LinkedIn:** (https://www.linkedin.com/in/jonathan-borges-andrade/)
 
 ---
 
