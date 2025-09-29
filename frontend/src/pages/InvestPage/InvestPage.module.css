@@ -1,0 +1,138 @@
+
+.pageContainer {
+    padding: 3rem 2rem;
+    background-color: #f8f9fa;
+    min-height: 80vh;
+    margin-bottom: 10vh;
+}
+
+
+.pageHeader {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 2.5rem auto;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pageHeader h1 {
+    font-size: 2.8rem;
+    color: #1a3d7c; 
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.pageHeader p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+.investContainer {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+}
+
+
+.investNav {
+    flex: 0 0 250px;
+    background-color: #f7f9fc;
+    border-right: 1px solid #e7e7e7;
+    padding: 20px 0;
+}
+
+.investNav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navButton {
+    display: block;
+    width: 100%;
+    padding: 16px 25px;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    font-size: 1rem;
+    color: #343a40;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
+    border-left: 4px solid transparent;
+    font-weight: 500;
+}
+
+.navButton:hover {
+    background-color: #eef3fc;
+    color: #1a3d7c;
+}
+
+.navButton.active {
+    background-color: #ffffff;
+    color: #1a3d7c;
+    font-weight: 700;
+    border-left-color: #645cff; 
+}
+
+
+.investContent {
+    flex-grow: 1;
+    padding: 30px 40px;
+    line-height: 1.7;
+}
+
+.contentSection {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.contentSection h2 {
+    color: #1a3d7c;
+    border-bottom: 2px solid #eef3fc;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.contentSection h4 {
+    color: #1a3d7c;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.contentSection p {
+    color: #454545;
+    margin-bottom: 1rem;
+}
+
+.contentSection ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.contentSection li {
+    margin-bottom: 0.8rem;
+}
+
+.contentSection strong {
+    color: #333;
+}
+
+/* Animação de fade-in para o conteúdo */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

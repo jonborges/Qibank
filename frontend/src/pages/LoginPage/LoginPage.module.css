@@ -1,0 +1,74 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 12rem); /* Header + Footer height */
+    padding: 2rem;
+    background-color: #f0f2f5;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #1a3d7c;
+    text-align: center;
+    margin: 0;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #333;
+    gap: 0.5rem;
+}
+
+.input {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.submit {
+    padding: 1rem;
+    background-color: #ff4fa1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit:hover {
+    background-color: #e63988;
+}
+
+.error {
+    color: #d93025;
+    text-align: center;
+}
+
+.signupLink {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.signupLink a {
+    color: #ff4fa1;
+    text-decoration: none;
+    font-weight: bold;
+}

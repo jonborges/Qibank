@@ -1,0 +1,74 @@
+.container {
+  padding: 2rem;
+  background-color: #f0f4ff; /* Azul clarinho */
+  min-height: calc(100vh - 160px); /* Ajusta considerando header + footer */
+}
+
+.title {
+  text-align: center;
+  color: #1a3d7c; /* Azul escuro */
+  margin-bottom: 2rem;
+}
+
+.balanceSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a3d7c;
+  margin: 1rem 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  background-color: #1a3d7c;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.actionBtn:hover {
+  background-color: #ff4081; /* detalhe rosa */
+}
+
+.transactionsSection {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.transactionList {
+  list-style: none;
+  padding: 0;
+}
+
+.transactionItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.deposit {
+  color: green;
+  font-weight: bold;
+}
+
+.payment {
+  color: red;
+  font-weight: bold;
+}

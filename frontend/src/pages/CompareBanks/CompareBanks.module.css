@@ -1,0 +1,289 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  width: 100%;
+  background-color: #f8f9fa; 
+  min-height: 80vh;
+}
+
+.comparatorSection {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4rem; 
+}
+
+.title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a3d7c;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px; 
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+
+.selectedBank {
+  flex: 0 0 380px;
+  background: linear-gradient(135deg, #ffffff, #fcfcfc);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.selectedBank h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #645cff;
+  border-bottom: 2px solid #ff4fa1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.selectedBank p {
+  color: #444444;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.selectedBank .removeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(to right, #ff4fa1, #ff6b9a);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.selectedBank .removeBtn:hover {
+  background: linear-gradient(to right, #645cff, #8a84ff);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.simulator {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.simulator input {
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  background-color: #fcfcfc;
+  color: #222222;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.simulator input:focus {
+  border-color: #645cff;
+  box-shadow: 0 0 0 3px rgba(100, 92, 255, 0.2);
+  outline: none;
+}
+
+.simulator .months {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.simulator .months button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff4fa1, #ff6b9a);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 79, 161, 0.3);
+}
+
+.simulator .months button:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(100, 92, 255, 0.4);
+  background: linear-gradient(45deg, #645cff, #8a84ff);
+}
+
+.simulator .months button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 92, 255, 0.5);
+}
+
+.simulator button:active {
+  transform: translateY(-2px);
+}
+
+.calculateBtn {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #645cff, #8a84ff);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(100, 92, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.calculateBtn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(100, 92, 255, 0.5);
+  background: linear-gradient(45deg, #ff4fa1, #ff6b9a);
+}
+
+.calculateBtn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(100, 92, 255, 0.4);
+}
+
+.simulator p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #645cff;
+  text-align: center;
+  margin-top: 1.5rem;
+  background-color: #f0f0f5;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.carousel {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  padding-top: 1rem; 
+  scroll-behavior: smooth;
+  align-items: stretch;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #645cff, #ff4fa1);
+  border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #4d45c7, #e03a87);
+}
+
+.card {
+  flex: 0 0 250px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(100, 92, 255, 0.15);
+  border-color: #645cff;
+}
+
+.highlight {
+  border: 3px solid #645cff;
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(100, 92, 255, 0.15);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #222222;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.observation {
+  font-size: 1rem;
+  color: #ff4fa1;
+  font-style: italic;
+  margin-top: 1rem;
+  background-color: rgba(255, 79, 161, 0.05);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff4fa1;
+}
+
+
+
+@media (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .selectedBank {
+    flex: 1 1 auto; 
+    width: 100%;
+    max-width: 500px;
+  }
+  .carousel {
+    width: 100%;
+  }
+}
