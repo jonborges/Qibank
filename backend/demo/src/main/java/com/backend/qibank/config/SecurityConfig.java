@@ -47,7 +47,11 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173")); // Permite requisições do seu frontend
+        // Permite requisições do frontend local e do frontend em produção na Vercel
+        configuration.setAllowedOrigins(Arrays.asList(
+                "http://localhost:5173",
+                "https://qibank.vercel.app" // URL que a Vercel provavelmente te dará
+        ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Métodos permitidos
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type")); // Cabeçalhos permitidos
         configuration.setAllowCredentials(true); // Permite envio de credenciais (cookies, tokens)
