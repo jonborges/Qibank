@@ -97,7 +97,7 @@ Siga os passos abaixo para configurar e rodar o projeto na sua máquina.
 ### 1. Clone o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/qibank.git
+git clone https://github.com/jonborges/Qibank.git
 cd qibank
 ```
 
