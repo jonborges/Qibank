@@ -20,6 +20,9 @@ Bem-vindo ao QiBank! Um projeto de aplicação bancária full-stack desenvolvido
 
 
 
+
+
+
 ## 🚀 Funcionalidades
 
 O QiBank simula as operações básicas de um banco digital, com foco na segurança e na experiência do usuário.
