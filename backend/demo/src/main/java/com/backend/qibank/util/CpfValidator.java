@@ -21,7 +21,7 @@ public class CpfValidator {
         }
 
         try {
-            // Cálculo do primeiro dígito verificador
+            
             int sum = 0;
             for (int i = 0; i < 9; i++) {
                 sum += (cleanedCpf.charAt(i) - '0') * (10 - i);
@@ -34,7 +34,7 @@ public class CpfValidator {
                 return false;
             }
 
-            // Cálculo do segundo dígito verificador
+            
             sum = 0;
             for (int i = 0; i < 10; i++) {
                 sum += (cleanedCpf.charAt(i) - '0') * (11 - i);

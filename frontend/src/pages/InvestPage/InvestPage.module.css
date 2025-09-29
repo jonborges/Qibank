@@ -125,7 +125,6 @@
     color: #333;
 }
 
-/* Animação de fade-in para o conteúdo */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -135,4 +134,77 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem 1rem;
+    margin-bottom: 5vh;
+  }
+
+  .pageHeader h1 {
+    font-size: 1.8rem;
+  }
+
+  .pageHeader p {
+    font-size: 1rem;
+  }
+
+  .investContainer {
+    flex-direction: column;   
+    border-radius: 12px;
+  }
+
+  .investNav {
+    flex: none;              
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 10px 0;
+    overflow-x: auto;     
+  }
+
+  .investNav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    padding: 0 10px;
+  }
+
+  .investNav li {
+    flex: 0 0 auto; 
+  }
+
+  .navButton {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-left: none;
+    border-bottom: 3px solid transparent; 
+    text-align: center;
+  }
+
+  .navButton.active {
+    border-left: none;
+    border-bottom-color: #645cff;
+    background-color: #fff;
+  }
+
+  .pageHeader h1,
+  .pageHeader p {
+  color: #ffffff;
+  }
+
+  .investContent {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .contentSection h2 {
+    font-size: 1.4rem;
+  }
+
+  .contentSection h4 {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
 }

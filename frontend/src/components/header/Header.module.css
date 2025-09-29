@@ -80,3 +80,31 @@
     width: 10rem;
   }
 }
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;          
+    padding: 0.5rem 1rem;  
+  }
+  
+  .logo {
+    width: 6rem;           
+    height: auto;
+    margin-bottom: 0.5rem; 
+  }
+
+  .links {
+    flex-wrap: wrap;        
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .links a,
+  .logoutButton {
+    font-size: 0.95rem;     
+  }
+}

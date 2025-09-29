@@ -6,9 +6,9 @@ import Footer from "../../components/footer/Footer";
 interface Bank {
   name: string;
   type: "banco" | "serviço";
-  rendimento?: string; // pode ser rendimento da poupança ou juros do empréstimo
-  taxa?: string; // taxa de manutenção ou juros adicionais
-  rate?: number; // taxa numérica para simulação
+  rendimento?: string; 
+  taxa?: string; 
+  rate?: number; 
   observacao?: string;
 }
 

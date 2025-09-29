@@ -19,7 +19,7 @@ public class CriarClienteRequestDTO {
     @NotBlank(message = "O CPF não pode ser vazio")
     private String cpf;
 
-    // Adicionar o campo de telefone
+
     private String phone;
 
     public String getNome() {

@@ -300,3 +300,139 @@
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
+/* --- Versão Mobile --- */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .left,
+  .right {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .textContainer {
+    text-align: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .sectionHero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .sectionAbout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .aboutImage {
+    max-width: 100%;
+  }
+
+  .sectionFeatures {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .feature {
+    padding: 0.5rem;
+  }
+
+  .sectionFaq {
+    padding: 2rem 1rem;
+  }
+
+  .faqQuestion {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .faqAnswer {
+    font-size: 0.95rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .sectionCta {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-position: center;
+  }
+
+  .textCenter {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a3d7c; 
+  }
+
+  .sectionCta p {
+    color: #e7d1d1;
+  }
+  .sectionCta h2 {
+  color: #ffffff;
+}
+
+  .logo {
+    max-width: 140px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* FOOTER */
+@media (max-width: 768px) {
+  footer {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
