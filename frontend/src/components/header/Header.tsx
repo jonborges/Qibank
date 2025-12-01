@@ -4,7 +4,12 @@ import styles from './Header.module.css';
 import logo from "../../assets/images/logo.png";
 import { useAuth } from '../../context/AuthContext';
 
-export default function Header() {
+
+interface HeaderProps {
+  onLoginClick?: () => void;
+}
+
+export default function Header({ onLoginClick }: HeaderProps) {
   const { isLoggedIn, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -30,7 +35,7 @@ export default function Header() {
         {isLoggedIn ? (
           <Link to="/account">Sua Conta</Link>
         ) : (
-          <Link to="/login">Entre</Link>
+          <Link to="/login" onClick={onLoginClick}>Entre</Link>
         )}
         <Link to="/compare-banks">Compare aqui!</Link>
         <Link to="/invest">Manual do Investimento</Link>

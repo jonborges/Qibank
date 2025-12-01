@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useAnimation, useInView, type Variants } from 'framer-motion';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import styles from './HomePage.module.css';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import womaninvest from "../../assets/images/womaninvest.jpg"
+import investChart from "../../assets/images/invest-chart.jpg";
+import familyPlanning from "../../assets/images/family-planning.jpg";
 import homegirl from "../../assets/images/homegirl.png";
 import homeman from "../../assets/images/homeman.png";
 import { Link } from 'react-router-dom';
@@ -27,6 +33,50 @@ const faqData = [
   }
 ];
 
+const benefitsData = [
+  {
+    image: womaninvest,
+    title: "Planeje seu futuro",
+    description: "No QiBank, acreditamos que a educação financeira é a chave para um futuro próspero. Comece a poupar e investir com sabedoria."
+  },
+  {
+    image: investChart,
+    title: "Invista com Inteligência",
+    description: "Fornecemos as melhores ferramentas e informações para que você possa tomar decisões financeiras informadas e alcançar seus objetivos."
+  },
+  {
+    image: familyPlanning,
+    title: "Segurança para sua família",
+    description: "Construa um patrimônio sólido e garanta a tranquilidade de quem você ama com as nossas soluções de investimento seguro."
+  }
+];
+
+// Componente para animar seções ao rolar
+const AnimatedSection: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.section
+      ref={ref}
+      className={className}
+      initial="hidden"
+      animate={controls}
+      variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 50 } }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      {children}
+    </motion.section>
+  );
+};
+
 export default function HomePage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const { isLoggedIn } = useAuth();
@@ -35,9 +85,24 @@ export default function HomePage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'auto' }); // 'auto' para rolagem instantânea
+  };
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: false,
+  };
+
   return (
     <>
-      <Header />
+      <Header onLoginClick={handleScrollToTop} />
       <main className={styles.container}>
 
         {/* HERO */}
@@ -68,35 +133,26 @@ export default function HomePage() {
         </section>
 
         {/* SOBRE */}
-        <section className={styles.sectionAbout}>
-          <div className={styles.content}>
-            <div >
-              <img src={womaninvest} alt="Mulher com Cofrinho" className={styles.aboutImage} />
-            </div>
-            <div className={styles.textCenter}>
-              {isLoggedIn ? (
-                <>
-                  <h2>Obrigado por escolher o QiBank!</h2>
-                  <p>
-                    Ficamos felizes em ter você como parte da nossa comunidade. Estamos comprometidos em oferecer as melhores ferramentas para sua jornada financeira. Explore sua conta e descubra tudo o que preparamos para você!
-                  </p>
-                </>
-              ) : (
-                <>
-                  <h2>Por que escolher o QiBank?</h2>
-                  <p>
-                    No QiBank, acreditamos que a educação financeira é a chave para um futuro próspero. 
-                    Nossa missão é fornecer as melhores ferramentas e informações para que você possa tomar 
-                    decisões financeiras informadas e alcançar seus objetivos.
-                  </p>
-                </>
-              )}
-            </div>
-          </div>
-        </section>
+        <AnimatedSection className={styles.sectionCarousel}>
+          <Slider {...sliderSettings}>
+            {benefitsData.map((benefit, index) => (
+              <div key={index} className={styles.carouselSlide}>
+                <div className={styles.carouselContent}>
+                  <div className={styles.carouselImageContainer}>
+                    <img src={benefit.image} alt={benefit.title} className={styles.carouselImage} />
+                  </div>
+                  <div className={styles.carouselText}>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </AnimatedSection>
 
         {/* FUNCIONALIDADES */}
-        <section className={styles.sectionFeatures}>
+        <AnimatedSection className={styles.sectionFeatures}>
           <div className={styles.content}>
             <div className={styles.feature}>
               <h3>Compare com outros bancos</h3>
@@ -111,12 +167,12 @@ export default function HomePage() {
               <p>Ferramentas que ajudam você a entender melhor sua vida financeira.</p>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* AJUDA / FAQ */}
-        <section className={styles.sectionFaq}>
+        <AnimatedSection className={styles.sectionFaq}>
           <div className={styles.contentColumn}>
-            
+
             <div className={styles.faqContainer}>
               {faqData.map((faq, index) => (
                 <div key={index} className={styles.faqItem}>
@@ -133,10 +189,10 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* CALL TO ACTION FINAL */}
-        <section className={styles.sectionCta}>
+        <AnimatedSection className={styles.sectionCta}>
           <div className={styles.content}>
             <div className={styles.textCenter}>
               {isLoggedIn ? (
@@ -158,7 +214,7 @@ export default function HomePage() {
               )}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
       </main>
       <Footer />
