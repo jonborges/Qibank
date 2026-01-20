@@ -1,51 +1,81 @@
+/* Dashboard - QiBank Professional */
 .container {
-  padding: 2rem;
-  background-color: #f0f4ff; /* Azul clarinho */
-  min-height: calc(100vh - 160px); /* Ajusta considerando header + footer */
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+  min-height: calc(100vh - 160px);
 }
 
 .title {
+  font-family: 'Montserrat', 'Inter', sans-serif;
   text-align: center;
-  color: #1a3d7c; /* Azul escuro */
-  margin-bottom: 2rem;
+  color: var(--primary-navy);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
 }
 
 .balanceSection {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  border: 1px solid var(--gray-200);
 }
 
 .balance {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #1a3d7c;
-  margin: 1rem 0;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin: 1.5rem 0;
+  letter-spacing: -0.02em;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .actionBtn {
-  background-color: #1a3d7c;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
   color: #fff;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 2rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all var(--transition-base);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.01em;
 }
 
 .actionBtn:hover {
-  background-color: #ff4081; /* detalhe rosa */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .transactionsSection {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.transactionsSection h2 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: var(--primary-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .transactionList {
@@ -56,19 +86,29 @@
 .transactionItem {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
   background-color: #fff;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-base);
+}
+
+.transactionItem:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .deposit {
-  color: green;
-  font-weight: bold;
+  color: var(--success);
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
 .payment {
-  color: red;
-  font-weight: bold;
+  color: var(--error);
+  font-weight: 600;
+  font-size: 1.125rem;
 }

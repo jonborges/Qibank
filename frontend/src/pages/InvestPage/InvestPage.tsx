@@ -7,6 +7,10 @@ type Category = {
   id: string;
   label: string;
   title: string;
+  icon: string;
+  riskLevel: 'Baixo' | 'Médio' | 'Alto';
+  minInvestment: string;
+  liquidity: string;
   content: React.ReactNode; 
 };
 
@@ -15,17 +19,51 @@ const investmentCategories: Category[] = [
     id: 'tesouro-direto', 
     label: 'Tesouro Direto', 
     title: 'Tesouro Direto', 
+    icon: '🏛️',
+    riskLevel: 'Baixo',
+    minInvestment: 'A partir de R$ 30',
+    liquidity: 'Diária',
     content: (
       <>
         <p>Considerado o investimento mais seguro do país, o Tesouro Direto é um programa do Tesouro Nacional para venda de títulos públicos federais para pessoas físicas. É ideal para iniciantes e para compor a parte mais conservadora da sua carteira.</p>
+        
+        <div className={styles.highlightBox}>
+          <h4>📊 Por que é o mais seguro?</h4>
+          <p>O risco de calote é praticamente zero, pois quem garante o pagamento é o próprio Governo Federal. É mais seguro que qualquer banco privado!</p>
+        </div>
+
         <h4>Principais Títulos:</h4>
         <ul>
-          <li><strong>Tesouro Selic:</strong> Pós-fixado, sua rentabilidade segue a taxa básica de juros (Selic). Ótimo para reserva de emergência, pois tem liquidez diária e baixo risco.</li>
-          <li><strong>Tesouro Prefixado:</strong> Você sabe exatamente quanto vai receber no vencimento. Ideal para metas de médio e longo prazo quando você acredita que a taxa de juros vai cair.</li>
-          <li><strong>Tesouro IPCA+:</strong> Protege seu dinheiro da inflação, pois rende a variação do IPCA mais uma taxa prefixada. Perfeito para aposentadoria e objetivos de longuíssimo prazo.</li>
+          <li><strong>Tesouro Selic (LFT):</strong> Pós-fixado, sua rentabilidade segue a taxa básica de juros (Selic). Ótimo para reserva de emergência, pois tem liquidez diária e baixo risco de perda. Rendimento atual: Selic + taxa.</li>
+          <li><strong>Tesouro Prefixado (LTN):</strong> Você sabe exatamente quanto vai receber no vencimento. Ideal para metas de médio e longo prazo quando você acredita que a taxa de juros vai cair. Exemplo: 12% a.a.</li>
+          <li><strong>Tesouro IPCA+ (NTN-B):</strong> Protege seu dinheiro da inflação, pois rende a variação do IPCA mais uma taxa prefixada. Perfeito para aposentadoria e objetivos de longuíssimo prazo. Exemplo: IPCA + 6% a.a.</li>
+          <li><strong>Tesouro IPCA+ com Juros Semestrais:</strong> Similar ao IPCA+, mas paga cupons semestrais. Bom para quem busca renda passiva.</li>
         </ul>
-        <h4>Dica de Ouro:</h4>
-        <p>Para a reserva de emergência, não há opção melhor que o <strong>Tesouro Selic</strong>. Para outros objetivos, diversifique entre os tipos de título conforme seu perfil e prazo.</p>
+
+        <div className={styles.prosConsGrid}>
+          <div className={styles.prosBox}>
+            <h4>✅ Vantagens</h4>
+            <ul>
+              <li>Segurança máxima</li>
+              <li>Liquidez diária (Tesouro Selic)</li>
+              <li>Investimento inicial baixo (R$ 30)</li>
+              <li>Facilidade de aplicação online</li>
+              <li>Diversas opções de prazos</li>
+            </ul>
+          </div>
+          <div className={styles.consBox}>
+            <h4>⚠️ Pontos de Atenção</h4>
+            <ul>
+              <li>IR regressivo (22,5% a 15%)</li>
+              <li>IOF nos primeiros 30 dias</li>
+              <li>Taxa de custódia (0,20% a.a. para valores acima de R$ 10 mil)</li>
+              <li>Volatilidade de preço em títulos prefixados antes do vencimento</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>💡 Dica de Ouro:</h4>
+        <p className={styles.tipBox}>Para a reserva de emergência, não há opção melhor que o <strong>Tesouro Selic</strong>. Para outros objetivos de médio e longo prazo, o <strong>Tesouro IPCA+</strong> é imbatível. Diversifique entre os tipos de título conforme seu perfil, prazo e objetivos financeiros!</p>
       </>
     )
   },

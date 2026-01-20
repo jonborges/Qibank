@@ -1,28 +1,30 @@
+/* HomePage - QiBank Professional */
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  
 }
 
 .content {
   display: flex;
   align-items: center; 
-  gap: 2rem; 
-  max-width: 1200px;
+  gap: 3rem; 
+  max-width: 1280px;
   width: 100%;
   justify-content: center;
+  padding: 0 2rem;
 }
 
-/* Novo container para seções com conteúdo em coluna */
 .contentColumn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  max-width: 1200px;
+  gap: 2.5rem;
+  max-width: 1280px;
   width: 100%;
+  padding: 0 2rem;
 }
+
 .left {
   display: flex;
   justify-content: flex-start;
@@ -42,34 +44,47 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .title {
-  font-size: 2.5rem;
-  color: #1a3d7c;
-  width: 28rem;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 32rem;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: #353333;
-  width: 28rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--gray-600);
+  line-height: 1.7;
+  max-width: 32rem;
+  font-weight: 400;
 }
 
 .ctaButton {
-  background-color: #1a3d7c;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
   color: white;
   border: none;
-  padding: 1rem 2rem; 
-  font-size: 1.1rem; 
-  font-weight: bold; 
-  border-radius: 25px;
+  padding: 1rem 2.5rem; 
+  font-size: 1rem; 
+  font-weight: 600; 
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 50%;
-  align-self: center; 
-  margin-top: 1rem; 
+  transition: all var(--transition-base);
+  width: fit-content;
+  align-self: flex-start; 
+  margin-top: 0.5rem;
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.01em;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .imageWrapper {
@@ -84,9 +99,10 @@
   width: 100%;
   max-width: 500px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
   animation: pulse 4s ease-in-out infinite;
   transition: opacity 0.5s ease-in-out;
+  box-shadow: var(--shadow-lg);
 }
 
 .fadeImageHover {
@@ -105,6 +121,7 @@
 }
 
 .sectionHero {
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,10 +129,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4rem 2rem; 
-  min-height: 55vh; 
+  padding: 5rem 2rem; 
+  min-height: 60vh; 
 }
-
 
 .sectionAbout {
   display: flex;
@@ -123,31 +139,39 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4rem 2rem;
-  min-height: 55vh; 
-}
-.sectionAbout h2{
-  font-size: 2rem;
-  color: #1a3d7c;
-  margin-bottom: 1rem;
+  padding: 5rem 2rem;
+  min-height: 60vh;
+  background-color: #ffffff;
 }
 
-.sectionAbout p{
-  font-size: 18px;
+.sectionAbout h2 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.sectionAbout p {
+  font-size: 1.0625rem;
+  color: var(--gray-600);
+  line-height: 1.8;
 }
 
 .aboutImage {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
 }
 
 /* --- Seção Carrossel --- */
 .sectionCarousel {
   width: 100%;
-  padding: 4rem 0;
-  background-color: #eef3fc; /* Cor de fundo adicionada para harmonizar */
+  padding: 5rem 0;
+  background-color: var(--gray-100);
 }
 
 .carouselSlide {
@@ -155,67 +179,72 @@
 }
 
 .carouselContent {
-  display: flex !important; /* Sobrescreve o display do react-slick */
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  max-width: 1100px;
+  gap: 4rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .carouselImageContainer {
   flex: 1;
-  max-width: 450px;
+  max-width: 480px;
 }
 
 .carouselImage {
   width: 100%;
-  height: 350px; 
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  height: 380px; 
+  border-radius: 12px;
+  box-shadow: var(--shadow-xl);
+  object-fit: cover;
 }
 
 .carouselText {
   flex: 1;
-  max-width: 500px;
+  max-width: 550px;
   text-align: left;
 }
 
 .carouselText h3 {
-  font-size: 2.2rem;
-  color: #1a3d7c;
-  margin-bottom: 1rem;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .carouselText p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  color: var(--gray-600);
+  line-height: 1.8;
 }
 
 /* Estilização dos "dots" de navegação do carrossel */
 .sectionCarousel :global(.slick-dots li button:before) {
   font-size: 12px;
-  color: #1a3d7c;
-  opacity: 0.5;
-  transition: all 0.3s ease;
+  color: var(--primary-navy);
+  opacity: 0.4;
+  transition: all var(--transition-base);
 }
 
 .sectionCarousel :global(.slick-dots li.slick-active button:before) {
-  color: #ff4fa1;
+  color: var(--accent-gold);
   opacity: 1;
+  transform: scale(1.2);
 }
 
 /* Seção FUNCIONALIDADES */
 .sectionFeatures {
-  background-color: #fff; 
+  background-color: #ffffff; 
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4rem 2rem;
-  min-height: 55vh;
+  padding: 5rem 2rem;
+  min-height: 60vh;
 }
 
 /* Seção AJUDA / FAQ */
@@ -224,9 +253,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4rem 2rem;
-  background-color: #88b2ff;
-  min-height: 60vh;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  min-height: 65vh;
 }
 
 /* Seção CALL TO ACTION FINAL */
@@ -239,51 +268,83 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-  min-height: 30vh;
+  padding: 5rem 2rem;
+  background-color: var(--gray-50);
+  min-height: 35vh;
+  position: relative;
+}
+
+.sectionCta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 37, 64, 0.7);
+  z-index: 1;
+}
+
+.sectionCta > * {
+  position: relative;
+  z-index: 2;
 }
 
 .textCenter {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
 .feature {
   flex: 1;
-  padding: 2rem; /* Aumenta o espaçamento interno */
+  padding: 2.5rem;
   text-align: center;
-  border: 2px solid #daa520; /* Borda dourada marcante */
-  border-radius: 15px; /* Cantos arredondados */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra para destacar */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  background: white;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-gold);
 }
 
 .feature h3 {
-  color: #daa520; /* Cor dourada para o título */
-  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
+
 .feature p {
-  color: #555;
+  color: var(--gray-600);
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 /* --- Seção de FAQ --- */
 .faqContainer {
   width: 100%;
-  max-width: 800px;
-  margin-top: 2rem;
+  max-width: 900px;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .faqItem {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
-  border: 1px solid #eef3fc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .faqQuestion {
@@ -291,35 +352,36 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   background: none;
   border: none;
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.0625rem;
   font-weight: 600;
-  color: #1a3d7c;
+  color: var(--primary-navy);
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all var(--transition-base);
+  font-family: 'Inter', sans-serif;
 }
 
 .faqQuestion:hover {
-  background-color: #f9f9f9;
+  background-color: rgba(74, 144, 226, 0.05);
 }
 
 .faqIcon {
   position: relative;
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease-in-out;
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-base);
 }
 
 .faqIcon::before,
 .faqIcon::after {
   content: '';
   position: absolute;
-  background-color: #ff4fa1;
+  background-color: var(--accent-gold);
   border-radius: 2px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transition-base);
 }
 
 .faqIcon::before {
@@ -351,16 +413,17 @@
 }
 
 .faqAnswerOpen {
-  max-height: 200px; /* Ajuste se a resposta for maior */
+  max-height: 250px;
   transition: max-height 1s ease-in-out;
 }
 
 .faqAnswer {
-  padding: 0 1.5rem 1.5rem 1.5rem;
-  color: #555;
-  line-height: 1.6;
-  border-top: 1px solid #eef3fc;
+  padding: 0 2rem 1.75rem 2rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+  border-top: 1px solid var(--gray-200);
   margin: 0 1.5rem;
+  font-size: 0.9375rem;
 }
 
 @keyframes pulse {

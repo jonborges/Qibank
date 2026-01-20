@@ -1,93 +1,109 @@
+/* SignupPage - QiBank Professional */
 .page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
   padding: 2rem;
   box-sizing: border-box;
 }
 
 .card {
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(15, 15, 15, 0.08);
-  padding: 28px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl);
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.5rem;
+  border: 1px solid var(--gray-200);
 }
 
 .title {
   margin: 0;
-  font-size: 1.4rem;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 2rem;
   text-align: center;
   font-weight: 700;
+  color: var(--primary-navy);
+  letter-spacing: -0.02em;
 }
 
 .row {
   display: flex;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .label {
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
-  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  gap: 0.625rem;
   flex: 1;
 }
 
 .input {
-  padding: 10px 12px;
+  padding: 0.875rem 1.125rem;
   border-radius: 8px;
-  border: 1px solid #e3e7ee;
-  font-size: 0.95rem;
+  border: 1.5px solid var(--gray-300);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
   outline: none;
   box-sizing: border-box;
+  transition: all var(--transition-base);
+  color: var(--gray-800);
 }
 
 .input:focus {
-  border-color: #6aa0ff;
-  box-shadow: 0 0 0 3px rgba(106, 160, 255, 0.12);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 .error {
-  color: #c0392b;
-  font-size: 0.8rem;
-  margin-top: 4px;
+  color: var(--error);
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
 }
 
 .previewBox {
   display: flex;
   justify-content: center;
+  margin: 0.5rem 0;
 }
 
 .previewImg {
-  width: 96px;
-  height: 96px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  border-radius: 999px;
-  border: 1px solid #e6eefc;
+  border-radius: 50%;
+  border: 3px solid var(--gray-200);
+  box-shadow: var(--shadow-md);
 }
 
 .submit {
-  margin-top: 6px;
-  padding: 12px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #4b8cff, #2b6bff);
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
   color: white;
   font-weight: 600;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.01em;
 }
 
 .submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(43, 107, 255, 0.35);
+  box-shadow: var(--shadow-lg);
 }
 
 .submit:disabled {

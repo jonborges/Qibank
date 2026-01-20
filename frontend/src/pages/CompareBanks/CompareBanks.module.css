@@ -1,293 +1,624 @@
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 2rem;
-  gap: 2rem;
-  width: 100%;
-  background-color: #f8f9fa; 
-  min-height: 80vh;
+/* CompareBanks - QiBank Professional */
+
+.pageWrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+}
+
+.heroSection {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+  color: white;
+}
+
+.heroSection h1 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.heroSection p {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .comparatorSection {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 4rem 2rem;
   width: 100%;
-  margin-bottom: 4rem; 
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .title {
-  font-size: 2.8rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #1a3d7c;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary-navy);
   font-weight: 700;
-  letter-spacing: -0.05em;
-  position: relative;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  font-weight: 400;
 }
 
 .content {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  width: 90%;
-  max-width: 1200px; 
+  gap: 2.5rem;
   align-items: flex-start;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
-
+/* Selected Bank Card */
 .selectedBank {
-  flex: 0 0 380px;
-  background: linear-gradient(135deg, #ffffff, #fcfcfc);
-  border-radius: 20px;
+  flex: 1 1 450px;
+  background: white;
+  border-radius: 16px;
   padding: 2.5rem;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  border: none;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-xl);
+  border: 2px solid var(--accent-gold);
+  animation: slideIn 0.4s ease-out;
 }
 
-.selectedBank h2 {
-  margin-top: 0;
-  font-size: 2rem;
-  color: #645cff;
-  border-bottom: 2px solid #ff4fa1;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.selectedBank p {
-  color: #444444;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.selectedBank .removeBtn {
+.removeBtn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(to right, #ff4fa1, #ff6b9a);
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--error);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-weight: bold;
-  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 1.25rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
-.selectedBank .removeBtn:hover {
-  background: linear-gradient(to right, #645cff, #8a84ff);
+.removeBtn:hover {
   transform: rotate(90deg) scale(1.1);
+  box-shadow: var(--shadow-lg);
 }
 
-.simulator {
-  margin-top: 2rem;
+.bankHeader {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gray-200);
 }
 
-.simulator input {
-  padding: 0.8rem 1rem;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  border: 2px solid #e0e0e0;
-  background-color: #fcfcfc;
-  color: #222222;
-  transition: border-color 0.3s, box-shadow 0.3s;
+.bankHeader h2 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.75rem;
+  color: var(--primary-navy);
+  margin: 0;
+  font-weight: 700;
 }
 
-.simulator input:focus {
-  border-color: #645cff;
-  box-shadow: 0 0 0 3px rgba(100, 92, 255, 0.2);
+.scoreBadge {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #E6B84D 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.bankDetails {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.detailLabel {
+  color: var(--gray-600);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.detailValue {
+  color: var(--primary-navy);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.observation {
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-gold);
+  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--gray-700);
+}
+
+.observation strong {
+  color: var(--accent-gold);
+}
+
+/* Simulator */
+.simulator {
+  background: var(--gray-50);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+}
+
+.simulator h3 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: var(--primary-navy);
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup label {
+  display: block;
+  color: var(--gray-700);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--gray-300);
+  background-color: white;
+  color: var(--gray-800);
+  transition: all var(--transition-base);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.inputGroup input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
   outline: none;
 }
 
-.simulator .months {
+.months {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.75rem;
   justify-content: center;
 }
 
-.simulator .months button {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 10px;
+.months button {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: 2px solid var(--gray-300);
+  border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(45deg, #ff4fa1, #ff6b9a);
-  color: white;
+  background: white;
+  color: var(--gray-700);
   font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(255, 79, 161, 0.3);
+  font-size: 0.9375rem;
+  transition: all var(--transition-base);
 }
 
-.simulator .months button:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(100, 92, 255, 0.4);
-  background: linear-gradient(45deg, #645cff, #8a84ff);
-}
-
-.simulator .months button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(100, 92, 255, 0.5);
-}
-
-.simulator button:active {
+.months button:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
   transform: translateY(-2px);
+}
+
+.months button.activeMonth {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+  color: white;
+  border-color: var(--primary-navy);
+  box-shadow: var(--shadow-md);
 }
 
 .calculateBtn {
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #645cff, #8a84ff);
+  width: 100%;
+  padding: 1.125rem;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #E6B84D 100%);
   color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(100, 92, 255, 0.35);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .calculateBtn:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(100, 92, 255, 0.5);
-  background: linear-gradient(45deg, #ff4fa1, #ff6b9a);
-}
-
-.calculateBtn:active {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(100, 92, 255, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
-.simulator p {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #645cff;
-  text-align: center;
-  margin-top: 1.5rem;
-  background-color: #f0f0f5;
-  padding: 1rem;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
+/* Result Box */
+.resultBox {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+  border-radius: 12px;
+  color: white;
+  animation: fadeIn 0.5s ease-out;
 }
 
-.carousel {
-  flex: 1;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.resultItem {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resultItem:last-child {
+  border-bottom: none;
+}
+
+.resultItem span {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.resultItem strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+.profit {
+  color: #4ADE80;
+}
+
+.profitPercent {
+  color: var(--accent-gold);
+}
+
+/* Carousel/Cards */
+.carousel {
+  flex: 1 1 600px;
+}
+
+.carouselTitle {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.25rem;
+  color: var(--gray-700);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-  overflow-x: auto;
-  padding-bottom: 1.5rem;
-  padding-top: 1rem; 
-  scroll-behavior: smooth;
-  align-items: stretch;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
-.carousel::-webkit-scrollbar {
-  height: 8px;
-}
-
-.carousel::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #645cff, #ff4fa1);
-  border-radius: 10px;
-}
-
-.carousel::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #4d45c7, #e03a87);
 }
 
 .card {
-  flex: 0 0 250px;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  background: white;
+  padding: 1.75rem;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  transition: all var(--transition-base);
+  border: 2px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-blue);
+}
+
+.card.highlight {
+  border-color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, white 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardHeader h3 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: var(--primary-navy);
+  margin: 0;
+  font-weight: 700;
+}
+
+.miniScore {
+  background: var(--gray-100);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.cardContent {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(100, 92, 255, 0.15);
-  border-color: #645cff;
-}
-
-.highlight {
-  border: 3px solid #645cff;
-  transform: scale(1.03);
-  box-shadow: 0 12px 25px rgba(100, 92, 255, 0.15);
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  color: #222222;
-  margin: 0 0 1rem 0;
-  font-weight: 600;
-}
-
-.card p {
-  font-size: 1rem;
-  color: #555555;
-  line-height: 1.5;
+.cardMain {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-gold);
   margin: 0;
 }
 
-.observation {
-  font-size: 1rem;
-  color: #ff4fa1;
-  font-style: italic;
-  margin-top: 1rem;
-  background-color: rgba(255, 79, 161, 0.05);
-  padding: 0.8rem;
-  border-radius: 8px;
-  border-left: 4px solid #ff4fa1;
+.cardSecondary {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  margin: 0;
 }
 
+.cardType {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
 
+/* Comparison Table */
+.comparisonTable {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.5s ease-out;
+}
 
-@media (max-width: 1200px) {
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comparisonTable h3 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.75rem;
+  color: var(--primary-navy);
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+  color: white;
+}
+
+thead th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--gray-200);
+  transition: all var(--transition-fast);
+}
+
+tbody tr:hover {
+  background: var(--gray-50);
+}
+
+tbody tr.highlightRow {
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%);
+  border-left: 4px solid var(--accent-gold);
+}
+
+tbody td {
+  padding: 1.25rem 1rem;
+  font-size: 1rem;
+  color: var(--gray-700);
+}
+
+.position {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.bankName {
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.profitCell {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.percentCell {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+/* Info Section */
+.infoSection {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.infoSection h2 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--primary-navy);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.infoCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-base);
+}
+
+.infoCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-gold);
+}
+
+.infoIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoCard h3 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-navy);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.infoCard p {
+  font-size: 1rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .content {
     flex-direction: column;
-    align-items: center;
   }
-  .selectedBank {
-    flex: 1 1 auto; 
-    width: 100%;
-    max-width: 500px;
-  }
+
+  .selectedBank,
   .carousel {
-    width: 100%;
+    flex: 1 1 100%;
   }
- .title {
-    font-size: 1.6rem; 
-    margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .comparatorSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .months {
+    flex-direction: column;
+  }
+
+  thead th,
+  tbody td {
+    padding: 1rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }

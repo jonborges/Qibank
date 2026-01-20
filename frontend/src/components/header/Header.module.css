@@ -1,51 +1,63 @@
+/* Header - QiBank Professional */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-around; 
-  padding: 0 2rem;
+  justify-content: space-between; 
+  padding: 0 3rem;
   width: 100%;
-  height: 6rem;
-  background-color: #1a3d7c; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
- 
+  height: 5rem;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+  box-shadow: 0 2px 12px rgba(10, 37, 64, 0.15);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
-  width: 7rem;
-  height: 50%;
-  border-radius: 25px;
+  width: 6.5rem;
+  height: auto;
+  border-radius: 8px;
   padding: 0;
   display: block;
+  transition: transform var(--transition-base);
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .links {
   display: flex;
-  gap: 1.8rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
 .links a {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: 500;
   text-decoration: none;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.95);
   position: relative;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
+  letter-spacing: 0.01em;
+  padding: 0.5rem 0;
 }
 
 .links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: 0;
   width: 0;
-  height: 3px;
-  background: #ff3292;
-  border-radius: 3px;
-  transition: width 0.3s ease;
+  height: 2px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  transition: width var(--transition-base);
+}
+
+.links a:hover {
+  color: #ffffff;
 }
 
 .links a:hover::after {
@@ -53,16 +65,24 @@
 }
 
 .logoutButton {
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  padding: 0;
+  padding: 0.625rem 1.5rem;
+  border-radius: 6px;
+  transition: all var(--transition-base);
+  letter-spacing: 0.01em;
 }
 
+.logoutButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
 
 .menuToggle {
   display: none;
@@ -71,7 +91,6 @@
   cursor: pointer;
   padding: 0.5rem;
 }
-
 
 .hamburger {
   width: 24px;
@@ -103,16 +122,15 @@
 @media (max-width: 768px) {
   .navbar {
     flex-direction: row;
-  
     justify-content: space-between;
     height: auto;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     position: relative; 
   }
 
   .logo {
-    width: 7rem;
-    height: 100%;
+    width: 6rem;
+    height: auto;
     margin-bottom: 0;
   }
 
@@ -130,19 +148,19 @@
     transition: max-height 0.5s ease-in-out;
     flex-direction: column;
     width: 100%;
-    background-color: #1a3d7c; 
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
     padding: 0; 
-    gap: 1rem;
+    gap: 0;
     margin-top: 0; 
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(10, 37, 64, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .linksOpen {
-    max-height: 300px;
+    max-height: 350px;
     padding: 1rem 0;
   }
 
- 
   .navOpen .hamburger {
     background-color: transparent; 
   }
@@ -158,15 +176,22 @@
   .links a,
   .logoutButton {
     text-align: center;
-    padding: 1rem 0;
-    font-size: 1.1rem;
-    width: 90%; 
-    margin: 0 auto;
-    border-bottom: 1px solid #102a54; 
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 100%; 
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .links a:last-of-type,
   .links > .logoutButton {
     border-bottom: none;
+  }
+
+  .logoutButton {
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.5rem 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 6px;
   }
 }
