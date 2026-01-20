@@ -253,13 +253,29 @@ const InvestPage: React.FC = () => {
     <>
       <Header />
       <main className={styles.pageContainer}>
-        <header className={styles.pageHeader}>
+        <header className={styles.heroSection}>
           <h1>Guia de Investimentos</h1>
           <p>Navegue pelas categorias para encontrar dicas e informações sobre cada tipo de investimento.</p>
         </header>
+        
+        <section className={styles.statsSection}>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>9+</div>
+            <div className={styles.statLabel}>Tipos de Investimento</div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>100%</div>
+            <div className={styles.statLabel}>Educação Gratuita</div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>24/7</div>
+            <div className={styles.statLabel}>Disponível</div>
+          </div>
+        </section>
 
         <div className={styles.investContainer}>
           <nav className={styles.investNav}>
+            <h3>Categorias</h3>
             <ul>
               {investmentCategories.map((category) => (
                 <li key={category.id}>
@@ -267,7 +283,15 @@ const InvestPage: React.FC = () => {
                     className={`${styles.navButton} ${activeId === category.id ? styles.active : ''}`}
                     onClick={() => setActiveId(category.id)}
                   >
-                    {category.label}
+                    <span className={styles.navIcon}>{category.icon}</span>
+                    <span className={styles.navLabel}>{category.label}</span>
+                    <span className={`${styles.riskBadge} ${
+                      category.riskLevel === 'Baixo' ? styles.riskLow :
+                      category.riskLevel === 'Médio' ? styles.riskMedium :
+                      styles.riskHigh
+                    }`}>
+                      {category.riskLevel}
+                    </span>
                   </button>
                 </li>
               ))}
@@ -276,12 +300,36 @@ const InvestPage: React.FC = () => {
           <div className={styles.investContent}>
             {activeContent && (
               <div className={styles.contentSection}>
-                <h2>{activeContent.title}</h2>
-                <div>{activeContent.content}</div>
+                <div className={styles.contentHeader}>
+                  <h2>
+                    <span className={styles.contentIcon}>{activeContent.icon}</span>
+                    {activeContent.title}
+                  </h2>
+                  <div className={styles.contentMeta}>
+                    <div className={styles.metaItem}>
+                      <strong>💰 Investimento Mínimo:</strong> {activeContent.minInvestment}
+                    </div>
+                    <div className={styles.metaItem}>
+                      <strong>⚡ Liquidez:</strong> {activeContent.liquidity}
+                    </div>
+                    <div className={styles.metaItem}>
+                      <strong>📊 Risco:</strong> {activeContent.riskLevel}
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.contentBody}>
+                  {activeContent.content}
+                </div>
               </div>
             )}
           </div>
         </div>
+
+        <section className={styles.ctaSection}>
+          <h2>Pronto para Começar a Investir?</h2>
+          <p>Abra sua conta no QiBank e tenha acesso a todas essas opções de investimento com segurança e facilidade.</p>
+          <button className={styles.ctaButton}>Abrir Minha Conta</button>
+        </section>
       </main>
       <Footer />
     </>
