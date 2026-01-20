@@ -71,6 +71,10 @@ const investmentCategories: Category[] = [
     id: 'cdb', 
     label: 'CDB', 
     title: 'CDB (Certificado de Depósito Bancário)', 
+    icon: '🏦',
+    riskLevel: 'Baixo',
+    minInvestment: 'A partir de R$ 500',
+    liquidity: 'No vencimento',
     content: (
       <>
         <p>O CDB é um título emitido por bancos para captar recursos. Em troca, o investidor recebe uma rentabilidade que pode ser prefixada, pós-fixada (atrelada ao CDI) ou híbrida.</p>
@@ -89,6 +93,10 @@ const investmentCategories: Category[] = [
     id: 'lci-lca', 
     label: 'LCI e LCA', 
     title: 'LCI (Letra de Crédito Imobiliário) e LCA (Letra de Crédito do Agronegócio)', 
+    icon: '🏘️',
+    riskLevel: 'Baixo',
+    minInvestment: 'A partir de R$ 1.000',
+    liquidity: 'No vencimento',
     content: (
       <>
         <p>As LCIs e LCAs são títulos de crédito emitidos por bancos para financiar o setor imobiliário e do agronegócio. O grande atrativo é a <strong>isenção de Imposto de Renda</strong> para pessoas físicas.</p>
@@ -107,6 +115,10 @@ const investmentCategories: Category[] = [
     id: 'renda-fixa', 
     label: 'Fundos de Renda Fixa', 
     title: 'Fundos de Renda Fixa', 
+    icon: '📈',
+    riskLevel: 'Baixo',
+    minInvestment: 'A partir de R$ 100',
+    liquidity: 'Diária ou D+1',
     content: (
       <>
         <p>Fundos de renda fixa reúnem o dinheiro de vários investidores para aplicar em ativos de baixo risco, como Tesouro Direto, CDBs e LCIs/LCAs. São geridos por profissionais.</p>
@@ -125,6 +137,10 @@ const investmentCategories: Category[] = [
     id: 'fundos-imobiliarios', 
     label: 'Fundos Imobiliários', 
     title: 'Fundos Imobiliários (FIIs)', 
+    icon: '🏢',
+    riskLevel: 'Médio',
+    minInvestment: 'A partir de R$ 100',
+    liquidity: 'Diária (bolsa)',
     content: (
       <>
         <p>Os FIIs permitem investir em imóveis de forma acessível e diversificada. Você compra cotas de fundos que aplicam em shoppings, galpões, hospitais, lajes corporativas e até títulos de crédito imobiliário.</p>
@@ -143,6 +159,10 @@ const investmentCategories: Category[] = [
     id: 'acoes', 
     label: 'Ações', 
     title: 'Ações', 
+    icon: '📉',
+    riskLevel: 'Alto',
+    minInvestment: 'A partir de R$ 10',
+    liquidity: 'Diária (bolsa)',
     content: (
       <>
         <p>Ações são pequenas partes de uma empresa de capital aberto negociadas na bolsa de valores. Ao comprar uma ação, você se torna sócio da companhia. É um investimento de renda variável, com maior potencial de retorno, mas também maior risco.</p>
@@ -161,6 +181,10 @@ const investmentCategories: Category[] = [
     id: 'etfs', 
     label: 'ETFs', 
     title: 'ETFs (Exchange Traded Funds)', 
+    icon: '🌐',
+    riskLevel: 'Médio',
+    minInvestment: 'A partir de R$ 50',
+    liquidity: 'Diária (bolsa)',
     content: (
       <>
         <p>ETFs são fundos de índice negociados em bolsa. Ao comprar uma cota, você investe em várias empresas ao mesmo tempo, seguindo a performance de um índice, como o Ibovespa.</p>
@@ -179,6 +203,10 @@ const investmentCategories: Category[] = [
     id: 'multimercado', 
     label: 'Fundos Multimercado', 
     title: 'Fundos Multimercado', 
+    icon: '🧩',
+    riskLevel: 'Médio',
+    minInvestment: 'A partir de R$ 500',
+    liquidity: 'Diária ou D+30',
     content: (
       <>
         <p>Esses fundos misturam renda fixa, ações, câmbio e até ativos internacionais. O objetivo é buscar rentabilidade superior à renda fixa tradicional.</p>
@@ -197,6 +225,10 @@ const investmentCategories: Category[] = [
     id: 'previdencia', 
     label: 'Previdência Privada', 
     title: 'Previdência Privada', 
+    icon: '🏦',
+    riskLevel: 'Baixo',
+    minInvestment: 'A partir de R$ 100',
+    liquidity: 'Longo prazo',
     content: (
       <>
         <p>A previdência privada é um investimento de longo prazo para complementar a aposentadoria. Existem dois tipos principais: PGBL e VGBL.</p>
